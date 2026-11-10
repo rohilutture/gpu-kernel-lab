@@ -1,0 +1,16 @@
+impl,kernel,shape,ms,gbps,tflops
+cuda_naive,softmax,"rows=8192,cols=1024",0.23734,282.75,0.000
+cuda_fused,softmax,"rows=8192,cols=1024",0.04880,1375.18,0.000
+cuda_fused,rmsnorm,"rows=8192,cols=1024",0.04688,1431.50,0.000
+cuda_naive,softmax,"rows=8192,cols=4096",1.04813,256.11,0.000
+cuda_fused,softmax,"rows=8192,cols=4096",0.18413,1457.87,0.000
+cuda_fused,rmsnorm,"rows=8192,cols=4096",0.18192,1475.57,0.000
+cuda_naive,softmax,"rows=8192,cols=8192",2.02208,265.50,0.000
+cuda_fused,softmax,"rows=8192,cols=8192",0.39904,1345.41,0.000
+cuda_fused,rmsnorm,"rows=8192,cols=8192",0.39910,1345.19,0.000
+cuda_flash,attention,"bh=32,n=512,d=64,causal",0.33978,24.69,3.160
+cuda_flash,attention,"bh=32,n=1024,d=64,causal",0.62227,26.96,6.902
+cuda_flash,attention,"bh=32,n=2048,d=64,causal",1.65651,20.26,10.371
+cuda_flash,attention,"bh=32,n=4096,d=64,causal",5.04189,13.31,13.630
+cuda_w4a16,gemv_int4,"N=4096,K=4096",0.01808,479.38,1.856
+cuda_w4a16,gemv_int4,"N=8192,K=8192",0.04486,772.02,2.992
